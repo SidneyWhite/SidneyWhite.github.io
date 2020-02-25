@@ -6,6 +6,10 @@ img#avatar {
     width: 50%;
 }
 
+li {
+    /* list-style-type: circle; */
+}
+
 
 /* SIDEBAR */
 
@@ -41,7 +45,7 @@ body {
     height: 100%;
     margin-left: 350px;
     /* Same as the width of the sidenav */
-    font-size: 28px;
+    font-size: 30px;
     /* Increased text to enable scrolling */
     padding: 0px 10px;
 }
