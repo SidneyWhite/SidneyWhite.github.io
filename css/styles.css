@@ -10,6 +10,7 @@ img#avatar {
 /* SIDEBAR */
 
 body {
+    /* background-color: #D5D8DC; */
     font-family: "Lato", sans-serif;
 }
 
@@ -20,16 +21,24 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    /* background-color: #111; */
     overflow-x: hidden;
     padding: 20px 8px 6px 16px;
     text-decoration: none;
     font-size: 25px;
     color: #F4F6F6;
     vertical-align: middle;
+    /*  */
+    background-image: url("../images/wall1.png");
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main {
+    height: 100%;
     margin-left: 350px;
     /* Same as the width of the sidenav */
     font-size: 28px;
