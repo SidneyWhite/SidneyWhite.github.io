@@ -26,6 +26,13 @@ p {
 body {
     color: #404040;
     font-family: Georgia, Garamond, Times, serif;
+    background-image: url("../images/silverware.jpg");
+    background-position: center;
+    /* background-size: contain; */
+}
+
+.list-icon {
+    list-style-image: url('../images/pie_icon.gif');
 }
 
 .center {
