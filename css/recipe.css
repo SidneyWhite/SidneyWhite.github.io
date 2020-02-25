@@ -1,0 +1,101 @@
+h2 {
+    background-color: #F0F0F0;
+    color: #A4A400;
+    font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+    font-size: 22pt;
+    font-weight: bold;
+    /* display: block; */
+    text-decoration: underline;
+    /* width: 100%; */
+}
+
+p {
+    margin: 20px 40px 20px 40px;
+    background-color: yellow;
+    font-style: italic;
+}
+
+.striked-out {
+    text-decoration: line-through;
+}
+
+.main-title {
+    text-align: center!important;
+}
+
+body {
+    color: #404040;
+    font-family: Georgia, Garamond, Times, serif;
+}
+
+.center {
+    margin: auto;
+    /* width: 60%; */
+    width: 1092px;
+}
+
+link {
+    color: #A4A400;
+}
+
+.abbreviation {
+    text-decoration: underline;
+}
+
+
+/* TOOLTIP */
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    /* border-bottom: 1px dotted black; */
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* TOOLTIP */
+
+.list-circle {
+    list-style: circle;
+}
+
+.list-no-style {
+    list-style: none!important;
+}
+
+.quotations {
+    font-style: italic;
+    /* color: #FFFFA8; */
+}
