@@ -1,5 +1,4 @@
 h2 {
-    background-color: #F0F0F0;
     color: #A4A400;
     font-family: "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
     font-size: 22pt;
@@ -7,6 +6,10 @@ h2 {
     /* display: block; */
     text-decoration: underline;
     /* width: 100%; */
+}
+
+h2>a {
+    background-color: #F0F0F0;
 }
 
 p {
@@ -20,7 +23,7 @@ p {
 }
 
 .main-title {
-    text-align: center!important;
+    text-align: center !important;
 }
 
 body {
@@ -99,7 +102,7 @@ link {
 }
 
 .list-no-style {
-    list-style: none!important;
+    list-style: none !important;
 }
 
 .quotations {
