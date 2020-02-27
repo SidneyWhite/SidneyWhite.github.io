@@ -1,1 +1,45 @@
-<h1>LAB 2-1 Recipe</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Retrieve Grade</title>
+</head>
+
+<body>
+    <h1>Retrieve your grade</h1>
+
+    <form action="http://mumstudents.org/params.php">
+        <p>Select course:</p>
+        <select id="courses" name="courses">
+            <option value="wap">Web Application Programming</option>
+            <option value="ea">Enterprise architecture</option>
+            <option value="asd">Advanced Software Development</option>
+            <option value="alg">Algorithm</option>
+        </select>
+
+        <p>Select entry:</p>
+        <input type="radio" id="august" name="entry" value="august">
+        <label for="august">Aug 2019</label><br>
+        <input type="radio" id="november" name="entry" value="november">
+        <label for="november">Nov 2019</label><br>
+
+        <br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="" required="required"><br>
+        <label for="student-id">Student ID:</label><br>
+        <input type="text" id="student-id" name="student-id" value="" required="required"><br><br>
+
+        <input type="checkbox" id="validation" name="validation" value="valid">
+        <label for="validation"> confirm that they are not lying and really are
+            only looking up their own grade</label><br>
+
+        <br>
+        <input type="submit" value="Get Grade!">
+    </form>
+
+
+
+
+</body>
+
+</html>
