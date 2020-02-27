@@ -45,6 +45,11 @@ input[type='submit'] {
     height: 30px;
 }
 
+
+/* input[type="number"] {
+    width: 50px;
+} */
+
 .go-back {
     vertical-align: middle;
 }
