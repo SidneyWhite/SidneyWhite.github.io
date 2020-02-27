@@ -1,0 +1,121 @@
+body {
+    background-image: url("homework2-movie_files/background.png");
+    margin: 0px;
+    font: 8pt Verdana, Tahoma, sans-serif;
+}
+
+.header {
+    background-image: url("homework2-movie_files/bannerbg.png");
+    margin: 0px;
+    padding: 0px;
+}
+
+.header>img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h1 {
+    font-size: 24pt;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+}
+
+.main {
+    width: 800px;
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    border: 4px solid gray;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.left-section {
+    float: left;
+    width: 550px;
+}
+
+.left-section-title {
+    background-image: url("homework2-movie_files/rbg.png");
+    overflow: hidden;
+}
+
+.left-section-title a {
+    font-weight: bold;
+    font-size: 48pt;
+    color: red;
+    text-align: center;
+}
+
+.left-section-title img {
+    float: left;
+}
+
+.right-section {
+    float: right;
+    width: 250px;
+    background-color: #A2B964;
+}
+
+.review-left {
+    float: left;
+    width: 47%;
+    margin: 1%;
+}
+
+.review-right {
+    float: right;
+    width: 47%;
+    margin: 1%;
+}
+
+.review p {
+    padding: 5px;
+    overflow: hidden;
+}
+
+.review img {
+    float: left;
+}
+
+.review>p:first-child>img {
+    margin: 5px;
+}
+
+.review>p:first-child {
+    font-weight: bold;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #E8DC9B;
+}
+
+.footer {
+    background-color: #A2B964;
+    clear: both;
+    margin: 0px;
+    padding: 1px;
+    text-align: center;
+}
+
+dl {
+    margin: 10pt;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10pt;
+}
+
+dd>ul {
+    list-style: none;
+}
+
+.validate {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    opacity: 0.5;
+}
