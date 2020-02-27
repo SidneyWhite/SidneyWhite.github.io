@@ -1,0 +1,50 @@
+img#banner {
+    width: 200px;
+    height: 90px;
+}
+
+label {
+    width: 150px;
+    display: inline-block;
+}
+
+.special-lbl {
+    width: 30px;
+}
+
+.title {
+    border: 1px solid black;
+    padding: 3px;
+    border-style: inset;
+}
+
+form {
+    width: 550px;
+    /* padding: 10px; */
+}
+
+legend {
+    background-color: white;
+}
+
+fieldset {
+    background-color: #f2e6ff;
+    border-radius: 10px;
+}
+
+input {
+    margin: 5px;
+}
+
+input[type='submit'] {
+    border: 3px solid;
+    background-color: orange;
+    font-size: 20px;
+    font-weight: bold;
+    width: 130px;
+    height: 30px;
+}
+
+.go-back {
+    vertical-align: middle;
+}
