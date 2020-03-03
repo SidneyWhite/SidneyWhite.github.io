@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSP Introduction Quiz</title>
+</head>
+
+<body style="font-size: 16px;">
+
+    <h2>JSP Introduction Quiz</h2>
+
+    <p><strong>1. What is the main value of Java Server Pages? </strong></p>
+    <p> To develop web pages that support dynamic content.
+    </p>
+    <p><strong>2. How are JSP pages related to servlets?</strong></p>
+    <p> JSP is compiled into servlets.</p>
+    <p><strong>3. How are JSP pages related to HTML? </strong></p>
+    <p>
+        JSP tags eliminates the need to code complex output streams from response object to produce a view from HTML. 
+    </p>
+    <p><strong>4. Give an example of a JSP scriptlet and show how it will look in the JSP servlet.</strong></p>
+    <p>
+        <% count = count * 10; %> --> count = count * 10
+    </p>
+    <p><strong>5. Give an example of a JSP declaration and show how it will look in the JSP servlet.</strong></p>
+    <p>
+        <%! int count = 0; %> --> int count = 10;
+    </p>
+    <p><strong>6. Give an example of a JSP comment and show how it will look in the JSP servlet.
+        </strong></p>
+    <p>
+        <%-- comment --%> --> //comment
+    </p>
+    <p><strong> 7. Give an example of a JSP expression and show how it will look in the JSP servlet.
+        </strong></p>
+    <p>
+        <%= ++count %> --> out.print( ++count );
+    </p>
+    <p><strong> 8. Give an example of a JSP directive and show how it will look in the JSP servlet.
+        </strong></p>
+    <p>
+        <%@ page import="java.util.Date" %>  --> import java.util.Date;
+    </p>
+    <p><strong> 9. Explain how an EL expression is evaluated.
+        </strong></p>
+    <p>
+        EL search attribute until it's found up the hierarchy.
+    </p>
+    <p><strong> 10. Explain how servlet attributes are involved in EL expressions.
+        </strong></p>
+    <p>
+        The purpose of EL is to offer a simpler way to invoke Java code—but the code itself belongs in servlet.
+        Call servlet java methods using EL.
+    </p>
+    <p><strong> 11. Explain how servlets and JSPs use request dispatch to interact.
+        </strong></p>
+    <p>
+        Servlet calls JSP using getRequestDispatcher() by specifying the page-relative or application-relative path of the target JSP page.
+    </p>
+</body>
+
+</html>
