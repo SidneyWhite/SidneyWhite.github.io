@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>JSP Introduction Quiz</title>
+</head>
+
+<body style="font-size: 16px;">
+
+    <h2> JSP Custom Tags Quiz</h2>
+
+    <p><strong>1. Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL
+            forEach. </strong></p>
+    <p>
+        <pre>
+        <% 
+            List styles = (List)request.getAttribute(“styles”);
+            Iterator it = styles.iterator();
+            while(it.hasNext()) {
+                out.print("try: " + it.next());
+            }
+        %>
+    </pre>
+    </p>
+    <p><strong>2. How do custom tags relate to JSTL?</strong></p>
+    <p>
+        JSP Standard Tag Library (JSTL) provides a framework for integrating the custom tags.
+    </p>
+    <p><strong>3. What is the role of the URI in the TLD and the taglib directive? </strong></p>
+    <p>
+        The URI in the taglib directive is a pointer to the TLD file.
+    </p>
+    <p><strong>4. What is a tag handler class?</strong></p>
+    <p>
+        When a JSP page containing a custom tag is translated into a servlet,
+        the tag is converted to operations on an object called a tag handler.
+    </p>
+    <p><strong>5. What is the role of attribute setters in a tag handler class?</strong></p>
+    <p>
+        It sets the tags attribute values.
+    </p>
+    <p><strong>6. What is the role of the doTag() method in a tag handler class?
+        </strong></p>
+    <p>
+        This is called from JSP servlet to render custom tag.
+    </p>
+    <p><strong> 7. What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in
+            a doTag() method?
+        </strong></p>
+    <p>
+        It outputs result to html page.
+    </p>
+    <p><strong>8. What does the operation getJspBody().invoke(null) do when called in a doTag()
+            method?
+        </strong></p>
+    <p>
+        When getJspBody(). invoke(null) is called, it is the output resulting
+        from the execution of the tag body's JSP content that gets passed to the client, not the JSP code itself.
+    </p>
+
+</body>
+
+</html>
