@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Text Decorator</title>
+	<link href="decoratemytext.css" type="text/css" rel="stylesheet" />
+	<script src="decoratemytext.js">
+	</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+	<!-- link to your script file here -->
+
+</head>
+
+<body>
+	<h1>Text Decorator</h1>
+
+	<div>
+		<img src="decorated.gif" alt="very decorated!" />
+	</div>
+
+	<!-- Your UI controls go here -->
+	<fieldset>
+		<legend>Text</legend>
+		<textarea id="txtarea" rows="4" cols="30" placeholder="Enter text....">
+			
+			</textarea>
+	</fieldset>
+
+	<fieldset>
+		<legend>Decoration</legend>
+		<button onclick="btn_clicked()">Bigger Decorations!</button> <br>
+		<input type="checkbox" onchange="check_clicked()" id="chk_box">Bling</input>
+	</fieldset>
+
+</body>
+
+</html>
