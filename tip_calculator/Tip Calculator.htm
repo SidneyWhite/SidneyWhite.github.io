@@ -12,7 +12,7 @@ function calcTip() {
 	var tip = tipElem.value;
 	var total = 0;
 	if(subtotal !="" && tip !=""){
-		total = subtotal / 100 * tip;
+		total = parseInt(subtotal) + parseInt(subtotal / 100 * tip);
 	}
 	totalElem.innerHTML = '$' + total;
 }
