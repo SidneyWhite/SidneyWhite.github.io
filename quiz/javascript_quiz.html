@@ -15,7 +15,8 @@
         setTimeout(booyah(), 2000); 
     </strong></p>
     <p>
-        
+        setTimeout(booyah, 2000);  - Executes booyah function after 2000ms.
+        setTimeout(booyah(), 2000); - Executes booyah function right away and setTimeout does not work.
     </p>
     <p><strong>2. What do the following 2 alerts display (answer without running the code)?
         <pre>
@@ -27,7 +28,7 @@
         alert(x);
         alert(y(2,3)); </pre></strong></p>
     <p>
-        
+        6 and 6.
     </p>
     <p><strong>3. Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that
         says “BOOYAH!”
@@ -35,15 +36,34 @@
         setTimeout(booyah1, 2000);
         <br>setTimeout(booyah2(), 2000);</strong></p>
     <p>
-         
+        <pre>
+        function booyah1() {
+            console.log("booyah");
+        }
+        
+        function booyah2() {
+            setTimeout(booyah1, 2000);
+        }
+        </pre>
     </p>
     <p><strong>4. What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the reasons
         for using it)?</strong></p>
     <p>
- 
+        Unobtrusive JavaScript is a general approach to the use of JavaScript in web pages.  
+        Website, and it’s content, should still be accessible when JavaScript is unavailable and 
+        the only way to guarantee this is by employing Unobtrusive JavaScript techniques.
+        Adding JavaScript to your site should be an additive process, bringing better experiences to 
+        those who have the capabilities of running your code, not a destructive one for
+        those who for whatever reason have JavaScript disabled or blocked or not fully implemented. 
+        This is called Progressive Enhancement.     
+
+        Simple practical ways would be including JavaScript at the end of your html file. 
+        And remove all the JavaScript codes from your html and move them into JavaScript files.
     </p>
     
 
 </body>
 
 </html>
+
+
