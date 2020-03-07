@@ -1,0 +1,36 @@
+body {
+    background-color: #CCCCFF;
+    /* font: 14pt bold sans-seriff; */
+    font-size: 14pt;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32pt;
+    font-weight: bold;
+}
+
+textarea{
+    text-align: center;
+    height: 400px;
+    width: 90%;
+    font-size: 12pt;
+    font-family: monospace;   
+}
+
+fieldset {
+    border: 5px solid black;
+    display: inline-block;
+}
+
+textarea, .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center{
+    text-align: center;
+}
