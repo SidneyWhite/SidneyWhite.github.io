@@ -13,7 +13,7 @@
     var animateFunc = function () {
         txtArea.val(res[i]);
         i += 1;
-        if (i > res.length) {
+        if (i == res.length) {
             i = 0;
         }
     };
@@ -36,6 +36,11 @@
             $("#start").prop("disabled", true);
             $("#selection").prop("disabled", true);
             $("#stop").prop("disabled", false);
+
+            //
+            if($('#selection').val() == "custom"){
+                CUSTOM = txt;
+            }
         });
 
         $("#stop").click(() => {
