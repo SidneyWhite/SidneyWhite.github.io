@@ -6,11 +6,11 @@
     <title>Module and Closure</title>
     <script src="closure.js"></script>
     <link rel="stylesheet" href="closure.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="shortcut icon" href="http://mumstudents.org/favicon.ico">
 </head>
 
 <body>
-
     <button onclick="rudyTimer()">Click me!</button>
 
     <div>
@@ -22,10 +22,10 @@
         <input type="text" id="deposit" name="deposit" value="" required="required" maxlength="16"><br>
     </div>
     <div>
-        <button id="create">Create new account</button>
+        <button id="create" onclick="createAccount()">Create new account</button>
     </div>
     <div>
-        <textarea id="txt-area" cols="30" rows="10"></textarea>
+        <textarea id="txtarea" cols="80" rows="20"></textarea>
     </div>
 </body>
 
