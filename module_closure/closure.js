@@ -15,7 +15,7 @@ var rudyTimer = () =>{
     return delayMsg2();
 };
 
-rudyTimer();
+// rudyTimer();
 
 function Account(accountName, deposit){
     this.accountName = accountName;
