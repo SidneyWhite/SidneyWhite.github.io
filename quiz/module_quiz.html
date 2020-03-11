@@ -10,10 +10,11 @@
         font-size: 12px;
     }
 </style>
+
 <body style="font-size: 16px;">
     <h2> Javascript Module Exercises </h2>
     <p><strong> 1. Determine what this Javascript code will print out (without running it):</strong>
-            <pre>
+        <pre>
                 x = 1;
                 var a = 5;
                 var b = 10;
@@ -35,13 +36,14 @@
                 document.write(x);
                 }
         </pre>
-        </p>
+    </p>
     <p>
-        undefined, 8, 8, 9, 10, 1
+        Result: undefined, 8, 8, 9, 10, 1
     </p>
     <p><strong>2. Define Global Scope and Local Scope in Javascript.</strong></p>
     <p>
-        Any variable declared outside of a function belongs to the global scope, and is therefore accessible from anywhere in your code.
+        Any variable declared outside of a function belongs to the global scope, and is therefore accessible from
+        anywhere in your code.
         Each function has its own scope, and any variable declared within that
         function is only accessible from that function and any nested functions, it's called local scope.
     </p>
@@ -61,7 +63,7 @@
         (d) Do statements in Scope C have access to variables defined in Scope A?<br>
         (e) Do statements in Scope C have access to variables defined in Scope B?
     </p>
-    <p>
+    <p> Result:
         a - NO <br>
         b - YES <br>
         c - NO <br>
@@ -79,7 +81,7 @@
         </pre>
     </p>
     <p>
-         81, 25
+        Result: 81, 25
     </p>
     <p><strong>5.What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?</strong>
         <pre>var foo = 1;
@@ -90,14 +92,15 @@
                 alert(foo);
             }
             bar();
-        </pre></p>
-    <p>
-         10
+        </pre>
     </p>
-    <p><strong>6. Consider the following definition of an add( ) function to increment a counter variable. 
-        Modify the module to define a count object with two methods: add( ) and reset( ). 
-        The count.add( ) method adds one to the counter (as above). 
-        The count.reset( ) method sets the counter to 0.</strong>
+    <p>
+        Result: 10
+    </p>
+    <p><strong>6. Consider the following definition of an add( ) function to increment a counter variable.
+            Modify the module to define a count object with two methods: add( ) and reset( ).
+            The count.add( ) method adds one to the counter (as above).
+            The count.reset( ) method sets the counter to 0.</strong>
         <pre>var add = (function () {
             var counter = 0;
             return function () {
@@ -105,86 +108,347 @@
             }
          })();
         </pre>
-        </p>
-    <p>
-         
     </p>
-    <p><strong>7. In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a function closure,
-        what is a "free" variable?</strong></p>
     <p>
-         
+        <pre>
+            var count = (function () {
+                var counter = 0;
+                var add = function () {
+                    return counter += 1;
+                }
+                var reset = function () {
+                    return counter = 0;
+                }
+                var value = () =>{
+                  return counter;
+                }
+                return {
+                  add: add,
+                  reset: reset,
+                  value: value
+                }
+             })();
+    console.log(count.add());
+    console.log(count.add());console.log(count.add());console.log(count.add());console.log(count.add());
+    console.log("value: "+ count.value());
+    console.log(count.reset());
+    console.log("value: "+count.value());
+         </pre>
     </p>
-    <p><strong>8. The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a definition
-        of a function make_adder(inc), whose return value is an add function with increment value inc (instead of 1). Here
-        is an example of using this function:</strong>
+    <p><strong>7. In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a
+            function closure,
+            what is a "free" variable?</strong></p>
+    <p>
+        Result: Counter is a free variable in function closure. If the variable is not a parameter, it's a free variable
+        inside function closure.
+    </p>
+    <p><strong>8. The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a
+            definition
+            of a function make_adder(inc), whose return value is an add function with increment value inc (instead of
+            1). Here
+            is an example of using this function:</strong>
         <pre>add5 = make_adder(5);
         add5( ); add5( ); add5( ); // final counter value is 15
         add7 = make_adder(7);
-        add7( ); add7( ); add7( ); // final counter value is 21</pre></p>
-    <p>
-        
+        add7( ); add7( ); add7( ); // final counter value is 21</pre>
     </p>
-    <p><strong>9. Suppose you are given a file of Javascript code containing a list of many function and variable declarations. All of
-        these function and variable names will be added to the Global Javascript namespace. What simple modification to
-        the Javascript file can remove all the names from the Global namespace?</strong></p>
     <p>
-        
-    </p>
-    <p><strong>10. Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an Employee Object
-        with the following fields and methods: <br>
-        Private Field: name <br>
-        Private Field: age<br>
-        Private Field: salary<br>
-        Public Method: setAge(newAge)<br>
-        Public Method: setSalary(newSalary)<br>
-        Public Method: setName(newName)<br>
-        Private Method: getAge( )<br>
-        Private Method: getSalary( )<br>
-        Private Method: getName( )<br>
-        Public Method: increaseSalary(percentage) // uses private getSalary( )<br>
-        Public Method: incrementAge( ) // uses private getAge( )<br></strong></p>
-    <p>
-
-    </p>
-    <p><strong>
-        11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.</strong></p>
-    <p>
-    </p>
-
-    <p><strong>
-        12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.</strong></p>
-    <p>
-    </p>
-    <p><strong>
-        13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and
-public methods setAddress(newAddress) and getAddress( ).</strong></p>
-    <p>
-    </p>
-    <p><strong>
-        14. What is the output of the following code?</strong>
         <pre>
-    const promise = new Promise((resolve, reject) => {
-        reject(“Hattori”);
-    });
-    promise.then(val => alert(“Success: “ + val))
-        .catch(e => alert(“Error: “ + e));
-</pre></p>
+            var make_adder = (function(){
+                var sum = 0;
+                var increment = 0;
+                var add = function () {
+                  return sum += increment;
+                 }
+                function init(inc){
+                  sum = 0;
+                  increment = inc;
+                  return add;
+                }
+                return init;
+              })();
+              
+              add5 = make_adder(5);
+              console.log("add5 - " + add5());
+              console.log("add5 - " + add5());
+              console.log("add5 - " + add5());
+              
+              add7 = make_adder(7);
+              console.log("add7 - " + add7());
+              console.log("add7 - " + add7());
+              console.log("add7 - " + add7());
+        </pre>
+    </p>
+    <p><strong>9. Suppose you are given a file of Javascript code containing a list of many function and variable
+            declarations. All of
+            these function and variable names will be added to the Global Javascript namespace. What simple modification
+            to
+            the Javascript file can remove all the names from the Global namespace?</strong></p>
     <p>
+        (()=>{
+        //put code here
+        })();
+    </p>
+    <p><strong>10. Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an
+            Employee Object
+            with the following fields and methods: <br>
+            Private Field: name <br>
+            Private Field: age<br>
+            Private Field: salary<br>
+            Public Method: setAge(newAge)<br>
+            Public Method: setSalary(newSalary)<br>
+            Public Method: setName(newName)<br>
+            Private Method: getAge( )<br>
+            Private Method: getSalary( )<br>
+            Private Method: getName( )<br>
+            Public Method: increaseSalary(percentage) // uses private getSalary( )<br>
+            Public Method: incrementAge( ) // uses private getAge( )<br></strong></p>
+    <p>
+        <pre>
+            var Employee = (function () {
+                var name = "";
+                var age = 0;
+                var salary = 0;
+                
+                var setAge = function (newAge){
+                    age = newAge;
+                }
+                var setSalary = function (newSalary){
+                    salary = newSalary;
+                }
+              
+                var setName = function (newName){
+                    name = newName;
+                }
+                
+                var getAge = function (){
+                  return age;
+                }
+                
+                var getSalary = function(){
+                   return salary;
+                }
+                
+                var getName = function(){
+                  return name;
+                }
+                
+                var increaseSalary = function(percentage){
+                  var currentSalary = getSalary();
+                  setSalary(currentSalary + currentSalary/100*percentage);
+                }
+                
+                var incrementAge = function(){
+                  var currentAge = getAge();
+                  setAge(currentAge + 1);
+                }
+                var getInfo = function(){
+                  return getName() + ", " + getAge() + ", " + getSalary();
+                }
+                
+                return {
+                  setAge: setAge,
+                  setSalary: setSalary,
+                  setName: setName,
+                  increaseSalary: increaseSalary,
+                  incrementAge: incrementAge,
+                  getInfo: getInfo
+                };
+              })();
+              
+              var emp = Employee;
+              emp.setAge(18);
+              emp.setName("Tom");
+              emp.setSalary(100);
+              
+              emp.incrementAge();
+              emp.increaseSalary(10);
+              
+              console.log(emp.getInfo());
+              
+              
+        </pre>
     </p>
     <p><strong>
-        15. What is the output of the following code?</strong>
+            11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.</strong></p>
+    <p>
+        <pre>
+            var Employee = (function () {
+                var name = "";
+                var age = 0;
+                var salary = 0;
+                
+                var setAge = function (newAge){
+                    age = newAge;
+                }
+                var setSalary = function (newSalary){
+                    salary = newSalary;
+                }
+              
+                var setName = function (newName){
+                    name = newName;
+                }
+                
+                var getAge = function (){
+                  return age;
+                }
+                
+                var getSalary = function(){
+                   return salary;
+                }
+                
+                var getName = function(){
+                  return name;
+                }
+                
+                var increaseSalary = function(percentage){
+                  var currentSalary = getSalary();
+                  setSalary(currentSalary + currentSalary/100*percentage);
+                }
+                
+                var incrementAge = function(){
+                  var currentAge = getAge();
+                  setAge(currentAge + 1);
+                }
+                var getInfo = function(){
+                  return getName() + ", " + getAge() + ", " + getSalary();
+                }
+                
+                return {
+                  setAge:  function (newAge) {  setAge(newAge); },
+                  setSalary: function (newSalary) {  setSalary(newSalary); } ,
+                  setName: function (newName) {  setName(newName); } ,
+                  increaseSalary: function (percentage) {  increaseSalary(percentage); },
+                  incrementAge: function () { incrementAge(); },
+                  getInfo: function () { return getInfo(); } 
+                };
+              })();
+              
+              var emp = Employee;
+              emp.setAge(18);
+              emp.setName("Tom");
+              emp.setSalary(100);
+              emp.incrementAge();
+              emp.increaseSalary(10);
+              console.log("Employee: "+emp.getInfo());
+              
+              
+        </pre>
+    </p>
+    <p><strong>
+            12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.</strong></p>
+    <p>
+        <pre>
+            var Employee = (function () {
+                var name = "";
+                var age = 0;
+                var salary = 0;
+                let myObject = {}; 
+                
+                var setAge = function (newAge){
+                    age = newAge;
+                }
+                var setSalary = function (newSalary){
+                    salary = newSalary;
+                }
+              
+                var setName = function (newName){
+                    name = newName;
+                }
+                
+                var getAge = function (){
+                  return age;
+                }
+                
+                var getSalary = function(){
+                   return salary;
+                }
+                
+                var getName = function(){
+                  return name;
+                }
+                
+                var increaseSalary = function(percentage){
+                  var currentSalary = getSalary();
+                  setSalary(currentSalary + currentSalary/100*percentage);
+                }
+                
+                var incrementAge = function(){
+                  var currentAge = getAge();
+                  setAge(currentAge + 1);
+                }
+                var getInfo = function(){
+                  return getName() + ", " + getAge() + ", " + getSalary();
+                }
+                
+                  myObject.setAge =   function (newAge) {  setAge(newAge); };
+                  myObject.setSalary= function (newSalary) {  setSalary(newSalary); };
+                  myObject.setName= function (newName) {  setName(newName); };
+                  myObject.increaseSalary= function (percentage) {  
+                    increaseSalary(percentage); };
+                  myObject.incrementAge= function () { incrementAge(); };
+                  myObject.getInfo= function () { return getInfo(); };
+              
+                return myObject;
+              })();
+              
+              var emp = Employee;
+              emp.setAge(18);
+              emp.setName("Tom");
+              emp.setSalary(100);
+              emp.incrementAge();
+              emp.increaseSalary(10);
+              console.log("Employee: "+emp.getInfo());              
+        </pre>
+    </p>
+    <p><strong>
+            13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field
+            and
+            public methods setAddress(newAddress) and getAddress( ).</strong></p>
+    <p>
+        <pre>
+            Employee.address = "";
+            Employee.setAddress = function (newAddress) {
+                address = newAddress;
+            };
+            Employee.getAddress = function () {
+                return address;
+            };
+
+            var emp = Employee;
+            emp.setAddress("New York");
+            console.log("Employee: "+emp.getAddress());
+        </pre>
+    </p>
+    <p><strong>
+            14. What is the output of the following code?</strong>
+        <pre>
+        const promise = new Promise((resolve, reject) => {
+            reject(“Hattori”);
+        });
+        promise.then(val => alert(“Success: “ + val))
+            .catch(e => alert(“Error: “ + e));
+        </pre>
+    </p>
+    <p>
+        Result: Error: Hattori
+    </p>
+    <p><strong>
+            15. What is the output of the following code?</strong>
         <pre>
         const promise = new Promise((resolve, reject) => {
             resolve(“Hattori”);
             setTimeout(()=> reject(“Yoshi”), 500);
         });
         promise.then(val => alert(“Success: “ + val))
-            .catch(e => alert(“Error: “ + e)); </pre></p>
+            .catch(e => alert(“Error: “ + e)); </pre>
+    </p>
     <p>
+        Result: Success: Hattori
     </p>
     <p><strong>
-        16. What is the output of the following code?</strong>
-<pre>
+            16. What is the output of the following code?</strong>
+        <pre>
         function job(state) {
             return new Promise(function(resolve, reject) {
                 if (state) {
@@ -203,8 +467,10 @@ public methods setAddress(newAddress) and getAddress( ).</strong></p>
                 return 'Error caught';
         });
 </pre>
-</p>
+    </p>
     <p>
+        success <br>
+        error
     </p>
 </body>
 
