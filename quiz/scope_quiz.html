@@ -7,77 +7,129 @@
 </head>
 
 <body style="font-size: 16px;">
-
     <h2> Javascript Scope Exercises </h2>
-
     <p><strong> 1. Determine what this Javascript code will print out (without running it):
-        <pre> x = 1;
-            var a = 5;
-            var b = 10;
-            var c = function(a, b, c) {
-            document.write(b); }
-            c(8,9,10); document.write(b); document.write(x);
-            }</pre>
+            <pre>
+                x = 1;
+                var a = 5;
+                var b = 10;
+                var c = function(a, b, c) {
+                    var x = 10; 
+                    document.write(x); 
+                    document.write(a);
+                    var f = function(a, b, c) {
+                        b = a; 
+                        document.write(b); 
+                        b = c;
+                        var x = 5;
+                    }
+                    f(a,b,c);
+                    document.write(b);
+                }
+                c(8,9,10); 
+                document.write(b); 
+                document.write(x);
+            }
+        </pre>
         </strong></p>
     <p>
-
+        Result: 10, 8, 8, 9, 9, 1
     </p>
-    <p><strong>2. What do the following 2 alerts display (answer without running the code)?
-            <pre>
-        var myfunc = function(a, x) {
-         return a * x;
-        };
-        var x = myfunc(2, 3);
-        var y = myfunc;
-        alert(x);
-        alert(y(2,3)); </pre></strong></p>
+    <p><strong>2. What is the difference between a method and function?</strong></p>
     <p>
-        6 and 6.
+        Objects' methods run inside that object.
     </p>
     <p><strong>3. What does 'this' refer to when used in a Java method?</strong></p>
     <p>
-
+        This refers to an instance variable of current class.
     </p>
     <p><strong>4. What does 'this' refer to when used in a JavaScript method?</strong></p>
     <p>
-
+        Inside an object's method, the object refers to itself as this.
     </p>
     <p><strong>5. What does 'this' refer to when used in a JavaScript constructor function?</strong></p>
     <p>
-
+        Refers to itself as this.
     </p>
     <p><strong>6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing
             keyword 'this'.
             When f is called by x.f( ), what does 'this' refer to?</strong></p>
     <p>
-
+        This refers to x;
     </p>
     <p><strong>7. What is a free variable in JavaScript?</strong></p>
     <p>
-
+        Free variables are the variables that are neither locally declared nor passed as parameter. 
     </p>
     <p><strong>8. Create an object that has properties with name = "fred" and major="music" and a property that is a
             function
             that takes 2 numbers and returns the smallest of the two, or the square of the two if they are
             equal.</strong></p>
     <p>
-
+        <pre>var object = {
+            name: "fred",
+            major: "music",
+            smallest: function(a, b) {
+                if(a == b) return Math.sqrt(a+b);
+              if (a > b) return b;
+              return a;
+            }
+          }</pre>
     </p>
     <p><strong>9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor
             function.
             Employee objects have the following fields: name, salary, position.</strong></p>
     <p>
-
+        <pre>
+            function Employee(name, salary, position) {
+                this.name = name;
+                this.salary = salary;
+                this.position = position;
+              }
+              console.log(
+                new Employee("George", 5000, "CEO")
+              );
+              console.log(
+                new Employee("Laura", 3000, "Janitor")
+              );
+              console.log(
+                new Employee("Tom", 900, "Security")
+              );
+        </pre>
     </p>
     <p><strong>10. Write a Javascript function that takes any number of input arguments and returns the product of the
             arguments.</strong></p>
     <p>
-
+        <pre>
+            function findMax() {
+                var i;
+                var total = 1;
+                for (i = 0; i < arguments.length; i++) {
+                    total = total * arguments[i];
+                }
+                console.log(total); 
+                return total;
+              }
+              var x = findMax(1, 2, 5, 9); // 
+              var x = findMax(5, 3, 2); // 
+        </pre>
     </p>
     <p><strong>
             11. Write an arrow function that returns the maximum of its three input arguments.</strong></p>
     <p>
-
+        <pre>
+            var findMax = (a, b, c) => {
+                var i;
+                var max = a;
+                if(b > max) max = b;
+                if(c > max) max = c;
+                return max;
+              }
+              var x = findMax(1, 9, 5); // 
+              console.log(x);
+              var x = findMax(5, 3, 2); // 
+              console.log(x);
+        </pre>
     </p>
 </body>
 
