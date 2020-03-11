@@ -7,13 +7,13 @@
 //     displayName();    
 // }
 
-var rudyTimer = () =>{
+var rudyTimer = (() =>{
     var msg = "Rudy!";
     function delayMsg2(){
         alert(msg);
     }
-    return delayMsg2();
-};
+    return delayMsg2;
+})();
 
 // rudyTimer();
 

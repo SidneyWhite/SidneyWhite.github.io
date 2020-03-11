@@ -37,11 +37,13 @@
         </pre>
         </p>
     <p>
-        
+        undefined, 8, 8, 9, 10, 1
     </p>
     <p><strong>2. Define Global Scope and Local Scope in Javascript.</strong></p>
     <p>
-
+        Any variable declared outside of a function belongs to the global scope, and is therefore accessible from anywhere in your code.
+        Each function has its own scope, and any variable declared within that
+        function is only accessible from that function and any nested functions, it's called local scope.
     </p>
     <p><strong>3. Consider the following structure of Javascript code:</strong>
         <pre>
@@ -60,7 +62,11 @@
         (e) Do statements in Scope C have access to variables defined in Scope B?
     </p>
     <p>
-        
+        a - NO <br>
+        b - YES <br>
+        c - NO <br>
+        d - YES <br>
+        e - YES <br>
     </p>
     <p><strong>4. What will be printed by the following (answer without running it)?</strong>
         <pre>var x = 9;
@@ -73,7 +79,7 @@
         </pre>
     </p>
     <p>
-         
+         81, 25
     </p>
     <p><strong>5.What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?</strong>
         <pre>var foo = 1;
@@ -86,10 +92,12 @@
             bar();
         </pre></p>
     <p>
-         
+         10
     </p>
-    <p><strong>6. Consider the following definition of an add( ) function to increment a counter variable. Modify the module to define a count object with two methods: add( ) and reset( ). The count.add( ) method
-        adds one to the counter (as above). The count.reset( ) method sets the counter to 0.</strong>
+    <p><strong>6. Consider the following definition of an add( ) function to increment a counter variable. 
+        Modify the module to define a count object with two methods: add( ) and reset( ). 
+        The count.add( ) method adds one to the counter (as above). 
+        The count.reset( ) method sets the counter to 0.</strong>
         <pre>var add = (function () {
             var counter = 0;
             return function () {
