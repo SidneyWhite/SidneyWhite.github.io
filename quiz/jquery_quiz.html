@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Quiz I</title>
+</head>
+
+<body style="font-size: 16px;">
+
+    <h2> jQuery Quiz I</h2>
+
+    <p><strong>1. In jQuery terminology, what is the difference between the “jQuery function” and the “jQuery object
+    </strong></p>
+    <p>
+        The jQuery function is a factory for creating a jQuery object that represents one or more DOM nodes. 
+        jQuery objects have methods to manipulate these nodes. 
+        These methods (sometimes called commands), are chainable as each method also returns a jQuery object.
+    </p>
+    <p><strong>2. Write jQuery code to find all h1 elements that are children of a div element and make their background color red.
+        Sample HTML:</strong>
+        <pre>
+            &lt;body&gt;
+                &lt;h1&gt;abc&lt;/h1&gt;&lt;br&gt;&lt;div&gt;
+                &lt;h1&gt;div-1&lt;/h1&gt; &lt;h1&gt;div-2&lt;/h1&gt; &lt;/div&gt; &lt;h1&gt;xyz&lt;/h1&gt;
+            &lt;/body&gt;
+        </pre>
+    </p>
+    <p>
+        Result:
+        <pre>
+        $(function() {
+            $("div h1").css("background-color", "red");
+          });
+        </pre>          
+    </p>
+    <p><strong>3. Use a jQuery method to insert the text "YES!" at the end of the element.
+    </strong></p>
+    <p>
+        <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+                &lt;head&gt;
+                &lt;script&gt;
+                    // &lt;!—INSERT YOUR JQUERY CODE HERE - - &gt;
+                    $(function() {
+                        var txt = $("p").text();
+                        $("p").text(txt + " YES.");
+                    });
+                &lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;p&gt;Is jQuery FUN or what? &lt;/p&gt;
+                &lt;/body&gt;
+            &lt;/html&gt;
+        </pre>
+    </p>
+</body>
+
+</html>
+
+
