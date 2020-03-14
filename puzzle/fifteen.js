@@ -4,7 +4,20 @@ var EMPTY_SQUARE = {
     y: 3
 }
 var shuffle_count = 0;
-var shuffle_max = 100;
+var shuffle_max = 3;
+
+var is_finish = function(){
+    var divs = $('#puzzlearea div');
+    for (var i = 0; i < divs.length; i++) {
+        var div = $(divs[i]);
+        if(parseInt(div.text()) - 1 != i){
+            return false;
+            break;   
+        }
+    }
+
+    alert("Yay you did it!")
+}
 
 var move_square = (el) => {
     // return true;
@@ -14,8 +27,6 @@ var move_square = (el) => {
     var x = parseInt($(el).attr("row"));
     var y = parseInt($(el).attr("column"));
 
-    // 0, 0
-    // 3,3 
     var left = empty_x * 100;
     var top = empty_y * 100;
 
@@ -30,6 +41,7 @@ var move_square = (el) => {
     EMPTY_SQUARE.y = y;
 
 
+    is_finish();
 };
 
 var is_movable = (el) => {
