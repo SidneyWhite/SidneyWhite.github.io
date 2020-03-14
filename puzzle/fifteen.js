@@ -4,19 +4,32 @@ var EMPTY_SQUARE = {
     y: 3
 }
 var shuffle_count = 0;
-var shuffle_max = 3;
+var shuffle_max = 50;
 
-var is_finish = function(){
+var is_finish = function () {
     var divs = $('#puzzlearea div');
+    var success = true;
     for (var i = 0; i < divs.length; i++) {
         var div = $(divs[i]);
-        if(parseInt(div.text()) - 1 != i){
-            return false;
-            break;   
+        var row_num = (i % 4);
+        var column_num = (Math.floor(i / 4));
+
+        var div_row = parseInt(div.attr("row"));
+        var div_column = parseInt(div.attr("column"));
+
+        if (row_num != div_row || column_num != div_column) {
+            success = false;
+            break;
         }
     }
 
-    alert("Yay you did it!")
+    if (success)
+        setTimeout(
+            function() 
+            {
+                alert("Yay you did it!");
+              //do something special
+            }, 150);
 }
 
 var move_square = (el) => {
@@ -88,8 +101,8 @@ var refresh_divs = function () {
         });
 };
 
-var shuffle = function(){
-    if(shuffle_count == shuffle_max){
+var shuffle = function () {
+    if (shuffle_count == shuffle_max) {
         shuffle_count = 1;
         return false;
     }
@@ -101,18 +114,18 @@ var shuffle = function(){
     var id_2 = $("#square_" + (x + 1) + "_" + y);
     var id_3 = $("#square_" + (x) + "_" + (y + 1));
     var id_4 = $("#square_" + (x) + "_" + (y - 1));
-    
+
     var movables = [];
-    if(id_1 !=undefined && id_1.length > 0) {
+    if (id_1 != undefined && id_1.length > 0) {
         movables.push(id_1);
-    } 
-    if(id_2 !=undefined && id_2.length > 0) {
+    }
+    if (id_2 != undefined && id_2.length > 0) {
         movables.push(id_2);
-    } 
-    if(id_3 !=undefined && id_3.length > 0) {
+    }
+    if (id_3 != undefined && id_3.length > 0) {
         movables.push(id_3);
-    } 
-    if(id_4 !=undefined && id_4.length > 0) {
+    }
+    if (id_4 != undefined && id_4.length > 0) {
         movables.push(id_4);
     }
 
@@ -134,7 +147,7 @@ var init = function () {
         var row_num = (i % 4);
         var column_num = (Math.floor(i / 4));
 
-        div.id = "square_" + (i % 4) + "_" + (Math.floor(i / 4));
+        div.id = "square_" + row_num + "_" + column_num;
         // 
 
         // calculate x and y for this piece
@@ -157,7 +170,7 @@ var init = function () {
 
     refresh_divs();
 
-    $('#shufflebutton').click(()=>{
+    $('#shufflebutton').click(() => {
         shuffle();
     });
 };
