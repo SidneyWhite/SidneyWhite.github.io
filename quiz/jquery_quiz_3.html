@@ -71,7 +71,10 @@
         </pre>
     </p>
     <p>
-
+        Result: <strong>$(function() {
+            $("ul.level-2 > li").css("background-color", "red");
+            });
+        </strong>
     </p>
     <p><strong>3. Write jQuery code to select the element that comes immediately before item three and change its
             background color to blue.
@@ -86,10 +89,13 @@
                 &lt;/ul>
         </pre>
     </p>
-    <p> Result:
-        <pre>
-
+    <p> <strong>
+            <pre>
+            $(function() {
+                $(".third-item").prev().css("background-color", "red");
+              });
         </pre>
+        </strong>
     </p>
 
     <p><strong>4. Let us one additional requirement for the "Go Vegetarian" button of the Webville Eatery Menu
@@ -100,6 +106,7 @@
         </strong>
     </p>
     <p>
+        $("").removeClass("Turkey").addClass("mashed-potatoes");
     </p>
 
     <p><strong>5. Write Javascript (jQuery) code to change the color of the parent and grandparent list items of the
@@ -113,9 +120,14 @@
                 &lt;html>
                 &lt;head>
                 &lt;script>
-                $(document).ready(function(){
-                &lt;!—INSERT YOUR JQUERY CODE HERE - - >
-                });
+                    $(document).ready(function(){
+                    &lt;!—INSERT YOUR JQUERY CODE HERE - - >
+                        <strong>
+                        $(function() {
+                            $("span").parents("ul,li").css( "color", "green" );
+                        });                  
+                        });
+                    </strong>
                 &lt;/script>
                 &lt;/head>
                 &lt;body>
