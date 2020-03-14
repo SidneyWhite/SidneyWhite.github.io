@@ -4,7 +4,8 @@ var EMPTY_SQUARE = {
     y: 3
 }
 var shuffle_count = 0;
-var shuffle_max = 50;
+var shuffle_max = 10;
+var last_shuffle_el_id = "";
 
 var is_finish = function () {
     var divs = $('#puzzlearea div');
@@ -29,7 +30,7 @@ var is_finish = function () {
             {
                 alert("Yay you did it!");
               //do something special
-            }, 150);
+            }, 90);
 }
 
 var move_square = (el) => {
@@ -46,7 +47,8 @@ var move_square = (el) => {
     $(el).css("left", left);
     $(el).css("top", top);
 
-    $(el).attr("id", "square_" + empty_x + "_" + empty_y);
+    var idd = "square_" + empty_x + "_" + empty_y;
+    $(el).attr("id", idd);
     $(el).attr("row", empty_x);
     $(el).attr("column", empty_y);
 
@@ -55,6 +57,7 @@ var move_square = (el) => {
 
 
     is_finish();
+    return idd;
 };
 
 var is_movable = (el) => {
@@ -116,22 +119,22 @@ var shuffle = function () {
     var id_4 = $("#square_" + (x) + "_" + (y - 1));
 
     var movables = [];
-    if (id_1 != undefined && id_1.length > 0) {
+    if (id_1 != undefined && id_1.length > 0 && id_1.attr("id") != last_shuffle_el_id) {
         movables.push(id_1);
     }
-    if (id_2 != undefined && id_2.length > 0) {
+    if (id_2 != undefined && id_2.length > 0 && id_2.attr("id") != last_shuffle_el_id) {
         movables.push(id_2);
     }
-    if (id_3 != undefined && id_3.length > 0) {
+    if (id_3 != undefined && id_3.length > 0 && id_3.attr("id") != last_shuffle_el_id) {
         movables.push(id_3);
     }
-    if (id_4 != undefined && id_4.length > 0) {
+    if (id_4 != undefined && id_4.length > 0 && id_4.attr("id") != last_shuffle_el_id) {
         movables.push(id_4);
     }
 
     var length = movables.length;
     var random_index = Math.floor((Math.random() * length));
-    move_square(movables[random_index]);
+    last_shuffle_el_id = move_square(movables[random_index]);
 
     shuffle_count++;
     shuffle();
