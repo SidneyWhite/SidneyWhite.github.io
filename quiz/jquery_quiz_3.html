@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Quiz III</title>
+</head>
+
+<body style="font-size: 16px;">
+
+    <h2> jQuery Quiz III</h2>
+
+    <p><strong>1. Find the text in the first paragraph (stripping out the html), then set the html of the last paragraph
+            to
+            show it is just text (the red bold is gone).
+        </strong>
+        <pre>
+        &lt;!doctype html>
+            &lt;html lang="en">
+            &lt;head>
+            &lt;meta charset="utf-8">
+            &lt;title>text demo&lt;/title>
+            &lt;style>
+            p {
+            color: blue;
+            margin: 8px;
+            }
+            span {
+            color: red;
+            }
+            &lt;/style>
+            &lt;script src="http://code.jquery.com/jquery-1.9.1.js">&lt;/script>
+            &lt;/head>
+            &lt;body>
+            &lt;p>&lt;span>Test&lt;/span> Paragraph.&lt;/p>
+            &lt;p>&lt;/p>
+            &lt;script>
+            &lt;!—INSERT YOUR JQUERY CODE HERE - - >
+            <strong>
+                $(function(){
+                    $("p:last").text(" LAST P");
+                });
+            </strong>
+            &lt;/script>
+            &lt;/body>
+        &lt;/html>
+    </pre>
+    </p>
+    <p>
+
+    </p>
+    <p><strong>2. Write jQuery code to create a red background for the level-2 list items.</strong>
+        <pre>
+            &lt;ul class="level-1">
+                &lt;li class="item-i">I&lt;/li>
+                &lt;li class="item-ii">II
+                &lt;ul class="level-2">
+                &lt;li class="item-a">A&lt;/li>
+                &lt;li class="item-b">B
+                &lt;ul class="level-3">
+                &lt;li class="item-1">1&lt;/li>
+                &lt;li class="item-2">2&lt;/li>
+                &lt;li class="item-3">3&lt;/li>
+                &lt;/ul>
+                &lt;/li>
+                &lt;li class="item-c">C&lt;/li>
+                &lt;/ul>
+                &lt;/li>
+                &lt;li class="item-iii">III&lt;/li>
+               &lt;/ul>
+        </pre>
+    </p>
+    <p>
+
+    </p>
+    <p><strong>3. Write jQuery code to select the element that comes immediately before item three and change its
+            background color to blue.
+        </strong>
+        <pre>
+             &lt;ul>
+                 &lt;li>list item 1 &lt;/li>
+                 &lt;li>list item 2 &lt;/li>
+                 &lt;li class="third-item">list item 3 &lt;/li>
+                 &lt;li>list item 4 &lt;/li>
+                 &lt;li>list item 5 &lt;/li>
+                &lt;/ul>
+        </pre>
+    </p>
+    <p> Result:
+        <pre>
+
+        </pre>
+    </p>
+
+    <p><strong>4. Let us one additional requirement for the "Go Vegetarian" button of the Webville Eatery Menu
+            described in Chapter 4 of Head First jQuery: "Turkey" in the ingredient list of any entree is replaced by
+            "Mashed Potatoes" in the vegetarian version. You may assume there is a class "turkey" that identifies
+            these items in the list. Describe the changes to the Javascript (jQuery) code to implement this new
+            requirement.
+        </strong>
+    </p>
+    <p>
+    </p>
+
+    <p><strong>5. Write Javascript (jQuery) code to change the color of the parent and grandparent list items of the
+            span
+            of text ("some text") in the following to green.
+        </strong>
+    </p>
+    <p>
+        <pre>
+            &lt;!DOCTYPE html>
+                &lt;html>
+                &lt;head>
+                &lt;script>
+                $(document).ready(function(){
+                &lt;!—INSERT YOUR JQUERY CODE HERE - - >
+                });
+                &lt;/script>
+                &lt;/head>
+                &lt;body>
+                &lt;div class="ancestors">
+                &lt;div> (great-grandparent)
+                &lt;ul> (grandparent)
+                &lt;li> (direct parent)
+                &lt;span>some text&lt;/span>
+                &lt;/li>
+                &lt;/ul>
+                &lt;/div>
+                &lt;/div>
+                &lt;/body>
+            &lt;/html>
+
+        </pre>
+    </p>
+
+</body>
+
+</html>
